@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC221135-4E1E-4E55-94B6-E2A987F1B63D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Avantik.Web.Service.Model</RootNamespace>
+    <AssemblyName>Avantik.Web.Service.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avantik.Web.Service.Entity\Avantik.Web.Service.Entity.csproj">
+      <Project>{45ae41b7-e3b1-484e-954e-5b97fa157833}</Project>
+      <Name>Avantik.Web.Service.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avantik.Web.Service.Helpers\Avantik.Web.Service.Helpers.csproj">
+      <Project>{fef72c08-fc6a-4492-abf1-b237d0d066d9}</Project>
+      <Name>Avantik.Web.Service.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avantik.Web.Service.Infrastructrue\Avantik.Web.Service.Infrastructrue.csproj">
+      <Project>{8d80bce4-5fec-4c54-95ab-6b4e108b3814}</Project>
+      <Name>Avantik.Web.Service.Infrastructrue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avantik.Web.Service.Model.Contract\Avantik.Web.Service.Model.Contract.csproj">
+      <Project>{1a5e11ed-39bd-42f3-abf0-fdeed24e4d28}</Project>
+      <Name>Avantik.Web.Service.Model.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avantik.Web.Service.Repository.Contract\Avantik.Web.Service.Repository.Contract.csproj">
+      <Project>{9d697da5-fb3c-427f-9838-ad2ebe32d8a3}</Project>
+      <Name>Avantik.Web.Service.Repository.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avantik.Web.Service.Repository.Factory\Avantik.Web.Service.Repository.Factory.csproj">
+      <Project>{2785a89c-9264-4326-be90-166e7a002c39}</Project>
+      <Name>Avantik.Web.Service.Repository.Factory</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Booking\" />
+    <Folder Include="Fares\" />
+    <Folder Include="Inventory\" />
+    <Folder Include="Route\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="tikAeroProcess">
+      <Guid>{D70A6384-160A-47FA-831F-85521EBAAB76}</Guid>
+      <VersionMajor>7</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBA">
+      <Guid>{000204EF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
